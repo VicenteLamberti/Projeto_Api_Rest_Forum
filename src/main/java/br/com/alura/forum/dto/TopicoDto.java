@@ -23,7 +23,7 @@ public class TopicoDto {
 	public Long getId() {
 		return id;
 	}
-	public String getTipo() {
+	public String getTitulo() {
 		return titulo;
 	}
 	public String getMensagem() {
