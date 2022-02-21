@@ -14,6 +14,11 @@ public class Perfil implements GrantedAuthority{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
+	
+	
+	public Perfil() {
+		super();
+	}
 	public Long getId() {
 		return id;
 	}

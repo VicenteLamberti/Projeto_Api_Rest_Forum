@@ -28,7 +28,6 @@ public class Usuario implements UserDetails {
 	private List<Perfil> perfis = new ArrayList<>();
 
 	public Usuario() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Long getId() {
