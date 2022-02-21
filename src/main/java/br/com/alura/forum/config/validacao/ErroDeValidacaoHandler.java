@@ -39,12 +39,15 @@ public class ErroDeValidacaoHandler {
 	}
 	
 	
+//	Outra mandeira de passar uma mensagem e status NotFound
 //	@ExceptionHandler(NoSuchElementException.class)
 //	public ResponseEntity<?> handle(NoSuchElementException exception) {
 //	
 //		return ResponseEntity.notFound().build();
 //	}
 	
+	
+//	Outra mandeira de passar uma mensagem e status NotFound
 //	@ResponseStatus(code=HttpStatus.NOT_FOUND)
 //	@ExceptionHandler(NoSuchElementException.class)
 //	public String handle(NoSuchElementException exception) {
@@ -55,7 +58,7 @@ public class ErroDeValidacaoHandler {
 	@ExceptionHandler(NoSuchElementException.class)
 	public ResponseEntity<?> handle(NoSuchElementException exception) {
 	
-		return new ResponseEntity<>("Ops nada por aqui foi encontrado",HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>("Ops nada por aqui foi encontrado!",HttpStatus.NOT_FOUND);
 	}
 	
 	
