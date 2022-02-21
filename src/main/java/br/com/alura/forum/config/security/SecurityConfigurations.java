@@ -58,14 +58,21 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 			.anyRequest().authenticated()
 			.and().csrf().disable()
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+			.and().headers().frameOptions().sameOrigin()
 			.and().addFilterBefore(new AutenticacaoViaTokenFilter(tokenService,usuarioRepository) , UsernamePasswordAuthenticationFilter.class);
 		}
 	
 	//Configuração de arquivos estáticos - imagens, css
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		// TODO Auto-generated method stub
-		super.configure(web);
+//		web.ignoring().antMatchers("/**.html","/v2/api-doc","/webjars/**","configuration/**","swagger-resources/**");
+		
+		 web.ignoring()
+	      .antMatchers(
+	        "/v2/api-docs",
+	        "/swagger-resources/**",
+	        "/swagger-ui.html**",
+	        "/webjars/**");
 	}
 	
 	@Override
