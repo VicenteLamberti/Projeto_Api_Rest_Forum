@@ -27,14 +27,14 @@ public class AutenticacaoController {
 	private MeuTokenService tokenService;
 	
 	@PostMapping
-	public ResponseEntity<?>autentica(@RequestBody @Valid LoginForm loginForm){
+	public ResponseEntity<TokenDto>autentica(@RequestBody @Valid LoginForm loginForm){
 	
 		UsernamePasswordAuthenticationToken dadosLogin = loginForm.converter();
 		try {
 			Authentication authentication = authenticationManager.authenticate(dadosLogin);
 			String token = tokenService.gerarToken(authentication);
 			System.out.println(token);
-			return ResponseEntity.ok().build();
+			return ResponseEntity.ok(new TokenDto(token,"Bearer"));
 		}
 		catch (AuthenticationException e) {
 			return ResponseEntity.badRequest().build();
