@@ -1,7 +1,5 @@
 package br.com.alura.forum.repository;
 
-import javax.persistence.EntityManager;
-
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
